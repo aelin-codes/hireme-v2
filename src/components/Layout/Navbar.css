@@ -17,23 +17,17 @@
   height: 72px;
 }
 
-.navbar.scrolled {
-  background: rgba(15, 23, 42, 0.85);
+.navbar.scrolled,
+.navbar.solid {
+  background: linear-gradient(135deg, var(--indigo-800), var(--indigo-950));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
 }
 
 .navbar.transparent {
-  background: transparent;
-}
-
-.navbar.solid {
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, var(--indigo-800), var(--indigo-950));
 }
 
 .navbar-logo {
@@ -61,8 +55,14 @@
   box-shadow: 0 2px 8px rgba(79, 70, 229, 0.4);
 }
 
-.navbar-logo span {
-  color: var(--indigo-400);
+.navbar-logo-text {
+  display: flex;
+  align-items: baseline;
+}
+
+.navbar-logo-text span {
+  color: var(--indigo-300);
+  margin-left: -1px; /* Bring .co even closer */
 }
 
 .navbar-links {

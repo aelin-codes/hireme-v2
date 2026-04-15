@@ -40,7 +40,7 @@ export default function Navbar() {
     setMobileOpen(false);
   };
 
-  const navClass = `navbar ${isLanding ? (scrolled ? 'scrolled' : 'transparent') : 'solid'}`;
+  const navClass = `navbar ${isLanding ? (scrolled ? 'scrolled' : 'solid') : 'solid'}`;
 
   return (
     <>
@@ -48,7 +48,7 @@ export default function Navbar() {
         <div className="navbar-inner">
           <Link to="/" className="navbar-logo">
             <div className="navbar-logo-icon">H</div>
-            HireMe<span>.co</span>
+            <span className="navbar-logo-text">HireMe<span>.co</span></span>
           </Link>
 
           <div className="navbar-links">
