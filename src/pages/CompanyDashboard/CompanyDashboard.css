@@ -1,0 +1,438 @@
+/* ===== Company Dashboard ===== */
+
+/* Applicant List */
+.applicant-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.applicant-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: white;
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--slate-200);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.applicant-row:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--indigo-200);
+  transform: translateY(-1px);
+}
+
+.applicant-rank {
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  color: var(--slate-400);
+  min-width: 30px;
+}
+
+.applicant-avatar {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--slate-50);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.applicant-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.applicant-name {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  background: #D1FAE5;
+  color: #065F46;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.verified-badge-lg {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: #D1FAE5;
+  color: #065F46;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  margin-left: var(--space-sm);
+}
+
+.applicant-meta {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.applicant-skills {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.applicant-match-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 120px;
+}
+
+.applicant-match-bar-container {
+  width: 100%;
+  height: 6px;
+  background: var(--slate-100);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.applicant-match-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s ease;
+}
+
+.applicant-match-score {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+.applicant-view-btn {
+  flex-shrink: 0;
+}
+
+/* Student Profile Modal */
+.student-profile-modal {
+  max-width: 600px;
+}
+
+.sp-content {
+  padding: var(--space-2xl);
+}
+
+.sp-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.sp-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--indigo-500), var(--indigo-600));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.sp-header-info {
+  flex: 1;
+}
+
+.sp-header-info h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sp-header-info > p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.sp-location {
+  font-size: var(--font-size-xs) !important;
+  color: var(--text-tertiary) !important;
+  margin-top: 4px !important;
+}
+
+.sp-match {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.sp-match-score {
+  font-size: var(--font-size-2xl);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.sp-match-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.sp-section {
+  margin-bottom: var(--space-xl);
+}
+
+.sp-section h3 {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-sm);
+}
+
+.sp-section p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.sp-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.sp-skill-badge {
+  padding: 6px 14px;
+  background: var(--indigo-50);
+  color: var(--indigo-700);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.sp-projects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.sp-project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  background: var(--slate-50);
+  border-radius: var(--radius-md);
+}
+
+.sp-project-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sp-project-tech {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.sp-actions {
+  display: flex;
+  gap: var(--space-md);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--slate-200);
+}
+
+/* Workforce Table */
+.workforce-table-wrapper {
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--slate-200);
+  overflow-x: auto;
+}
+
+.workforce-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.workforce-table thead {
+  background: var(--slate-50);
+}
+
+.workforce-table th {
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.workforce-table td {
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--font-size-sm);
+  border-bottom: 1px solid var(--slate-100);
+  vertical-align: middle;
+}
+
+.workforce-table tbody tr:hover {
+  background: var(--slate-50);
+}
+
+.workforce-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.wf-intern {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.wf-avatar {
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--slate-100);
+  border-radius: 50%;
+}
+
+.wf-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.wf-college {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.wf-work {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.wf-date {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.wf-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 120px;
+}
+
+.wf-progress-text {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--text-secondary);
+  min-width: 32px;
+}
+
+/* Company sidebar additions */
+.company-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.company-stat-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--slate-200);
+  text-align: center;
+}
+
+.company-stat-value {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--indigo-600);
+}
+
+.company-stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .applicant-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .applicant-rank {
+    display: none;
+  }
+
+  .applicant-match-col {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .applicant-view-btn {
+    width: 100%;
+  }
+
+  .sp-header {
+    flex-direction: column;
+  }
+
+  .sp-actions {
+    flex-direction: column;
+  }
+
+  .sp-actions .btn {
+    width: 100%;
+  }
+
+  .company-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .workforce-table {
+    font-size: var(--font-size-xs);
+  }
+
+  .workforce-table th,
+  .workforce-table td {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
