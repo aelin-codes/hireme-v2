@@ -19,9 +19,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [location]);
 
   const handleLogout = async () => {
     await logout();

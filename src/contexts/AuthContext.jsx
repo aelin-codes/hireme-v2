@@ -4,23 +4,25 @@ import { supabase, isDemoMode, signOut as supabaseSignOut } from '../lib/supabas
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
-  const [role, setRole] = useState(null); // 'student' | 'company'
+  const [user, setUser] = useState(() => {
+    try {
+      const saved = localStorage.getItem('hireme_session');
+      return saved ? JSON.parse(saved).user : null;
+    } catch {
+      return null;
+    }
+  });
+  const [role, setRole] = useState(() => {
+    try {
+      const saved = localStorage.getItem('hireme_session');
+      return saved ? JSON.parse(saved).role : null;
+    } catch {
+      return null;
+    }
+  });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for persisted demo session
-    const savedSession = localStorage.getItem('hireme_session');
-    if (savedSession) {
-      try {
-        const parsed = JSON.parse(savedSession);
-        setUser(parsed.user);
-        setRole(parsed.role);
-      } catch (e) {
-        localStorage.removeItem('hireme_session');
-      }
-    }
-
     if (!isDemoMode && supabase) {
       supabase.auth.getSession().then(({ data: { session } }) => {
         if (session?.user) {
@@ -42,7 +44,7 @@ export function AuthProvider({ children }) {
 
       return () => subscription.unsubscribe();
     } else {
-      setLoading(false);
+      setLoading(false); // eslint-disable-line react-hooks/set-state-in-effect
     }
   }, []);
 
@@ -66,6 +68,7 @@ export function AuthProvider({ children }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useAuth() {
   const context = useContext(AuthContext);
   if (!context) throw new Error('useAuth must be used within AuthProvider');

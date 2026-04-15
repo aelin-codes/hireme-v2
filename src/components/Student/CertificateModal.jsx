@@ -46,7 +46,7 @@ export default function CertificateModal({ internship, onClose }) {
                 </div>
                 <div className="cert-id">
                   <p>Certificate ID</p>
-                  <code>HM-{internship.id}-{Date.now().toString(36).toUpperCase()}</code>
+                  <code>HM-{internship.id}-{(internship.company.length * 12345).toString(36).toUpperCase()}</code>
                 </div>
                 <div className="cert-signature">
                   <div className="cert-sig-line" />

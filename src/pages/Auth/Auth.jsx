@@ -46,7 +46,7 @@ export default function Auth() {
     setError('');
     setSuccess('');
 
-    const cleanEmail = sanitizeInput(email).replace(/&amp;/g, '&').replace(/&#x2F;/g, '/').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#x27;/g, "'");
+    sanitizeInput(email).replace(/&amp;/g, '&').replace(/&#x2F;/g, '/').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#x27;/g, "'");
     const cleanName = sanitizeInput(name);
 
     if (!validateEmail(email)) {
@@ -78,7 +78,7 @@ export default function Auth() {
       }
 
       if (mode === 'signup') {
-        const { data, error: authError } = await signUpWithEmail(email, password, { name: cleanName, role });
+        const { error: authError } = await signUpWithEmail(email, password, { name: cleanName, role });
         if (authError) {
           setError(authError.message);
         } else {
@@ -94,7 +94,7 @@ export default function Auth() {
           navigate(role === 'student' ? '/student' : '/company');
         }
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred. Please try again.');
     } finally {
       setLoading(false);

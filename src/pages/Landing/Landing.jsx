@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Users, Target, Search, BarChart3, Briefcase, FileText, 
@@ -9,7 +9,6 @@ import {
 import './Landing.css';
 
 export default function Landing() {
-  const [isVisible, setIsVisible] = useState({});
 
   useEffect(() => {
     const observer = new IntersectionObserver(
